@@ -1,0 +1,23 @@
+mixin head(array)
+	meta(charset="UTF-8")
+	meta(http-equiv="X-UA-Compatible", content="IE=edge")
+	meta(name="viewport", content="width=device-width, initial-scale=1.0")
+	title!= array.title_inner
+	link(rel='icon' type='image/png' sizes='64x64' href='/favicon-64.png')
+	link(rel='icon' type='image/png' sizes='32x32' href='/favicon-32.png')
+	link(rel='icon' type='image/png' sizes='16x16' href='/favicon-16.png')
+	link(rel="stylesheet", href="css/main.min.css")
+
+mixin icon(name, mod)
+	svg.icon(class!= mod)
+		use(xlink:href="images/sprite/sprite-icons.svg#" + name)
+
+mixin picture(data)
+	picture(class!= data.class)
+		source(type="image/jpeg", srcset!= data.img, data-srcset!= data.img)
+		img(class!= data.class_img, data-src!= data.img, alt=data.alt)
+
+mixin loop_while(counter)
+	-	n = 0;
+	while n < counter
+		-n++

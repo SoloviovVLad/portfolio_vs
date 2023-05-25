@@ -1,0 +1,13 @@
+.footer {
+	position: relative;
+
+	width: 100%;
+	min-height: var(--height-footer);
+	flex: 0 0 auto;
+
+	font-size: 1rem;
+	background-color: $white;
+
+	will-change: transform;
+}
+

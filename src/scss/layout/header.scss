@@ -1,0 +1,17 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	height: var(--height-header);
+	width: 100%;
+
+	background-color: $white;
+
+	will-change: transform;
+
+	z-index: 101;
+}
+
+//------------------------------------------------------------layout###
+

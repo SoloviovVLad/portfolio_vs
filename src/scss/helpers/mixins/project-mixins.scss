@@ -1,0 +1,43 @@
+@mixin nav_active {
+	position: relative;
+	font-weight: 500;
+	letter-spacing: .23em;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: .1rem;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: currentColor;
+	}
+}
+
+@mixin hover_line {
+	position: relative;
+
+	display: block;
+
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: .1rem;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: currentColor;
+
+		transform: translateX(-100%);
+
+		transition: transform .3s ease;
+	}
+
+	&:hover {
+		&::before {
+			transform: translateX(0);
+		}
+	}
+}

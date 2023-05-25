@@ -1,0 +1,8 @@
+mixin breadcrumbs(data)
+	.breadcrumbs
+		each item in data
+			if item
+				a(href='#')!=item.title
+				if item.icon
+					.breadcrumbs__icon
+						+icon('breadcrumbs_arrow', 'icon--size_mod')

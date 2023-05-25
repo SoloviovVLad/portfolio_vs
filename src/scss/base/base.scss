@@ -1,0 +1,109 @@
+@import 'reset';
+
+:root {
+	--full-screen: calc(var(--vh, 1vh) * 100);
+
+	// --height-footer: 28.6rem;
+	--footer-indent-right: 7.6rem;
+
+	@include bp($point_0, min) {
+		--gl-indent: 12rem;
+	}
+
+	@include bp($point_0 - 1, $point_1) {
+		--gl-indent: 7rem;
+	}
+
+	@include bp($point_1 - 1, $point_4) {
+		--gl-indent: 3.9rem;
+	}
+	@include bp($point_4 - 1) {
+		--gl-indent: 1.5rem;
+	}
+
+	@include bp($point_2, min) {
+		--height-header: 9.2rem;
+	}
+
+	@include bp($point_3 - 1) {
+		--height-header: 7.2rem;
+	}
+}
+
+html {
+	height: 100%;
+	font: 400 10px $font_1;
+
+	font-size: 10px;
+}
+
+body {
+	position: relative;
+
+	display: flex;
+	height: 100%;
+
+	font-size: $font_size_base;
+	color: $color_text_base;
+
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	background: $body_bg;
+
+	&.body--open_menu {
+		overflow: hidden;
+	}
+
+	@supports (display: grid) {
+		display: block;
+	}
+}
+
+.preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background-color: $white;
+
+	opacity: 1;
+	transition: opacity 0.3s;
+
+	z-index: 1000;
+
+	.body--loaded & {
+		pointer-events: none;
+		opacity: 0;
+	}
+}
+
+.wrapper {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	height: auto!important;
+	overflow-x: hidden;
+}
+
+.base {
+	width: 100%;
+	position: relative;
+	padding: var(--height-header) 0 0;
+
+	flex: 1 0 auto;
+}
+
+a {
+	text-decoration: none;
+	color: $color_link_base;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}

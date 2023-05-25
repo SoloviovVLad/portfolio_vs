@@ -1,0 +1,43 @@
+.swiper-button-disabled {
+	opacity: .3;
+
+	pointer-events: none;
+}
+
+.breadcrumbs {
+	position: relative;
+	z-index: 15;
+
+	display: flex;
+	align-items: center;
+
+	a {
+		font-size: 1.2rem;
+
+		color: #a4a4a4;
+
+		transition: color .3s ease-in-out;
+
+		&:hover {
+			color: $orange;
+		}
+	}
+
+	@include bp($point_4 - 1) {
+		margin-top: 2rem;
+		margin-bottom: -1.8rem;
+
+		justify-content: center;
+		flex-wrap: wrap;
+		text-align: center;
+	}
+}
+
+.breadcrumbs__icon {
+	width: .5rem;
+	height: .5rem;
+	margin-left: 1rem;
+	margin-right: 1rem;
+
+	color: $gray_4;
+}

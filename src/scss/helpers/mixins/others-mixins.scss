@@ -1,0 +1,23 @@
+@mixin stretch {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+@mixin bp($width, $value: max) {
+	@if $value == min {
+		@media screen and (min-width: $width) {
+			@content;
+		}
+	} @else if $value == max {
+		@media screen and (max-width: $width) {
+			@content;
+		}
+	} @else {
+		@media (max-width: $width) and (min-width: $value) {
+			@content;
+		}
+	}
+}

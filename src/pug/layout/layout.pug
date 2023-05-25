@@ -1,0 +1,21 @@
+include ../templates/project-mixins
+include ../templates/global-mixins
+include ../templates/mixins/m-header
+include ../templates/mixins/m-footer
+
+block vars
+block project_vars
+
+doctype
+html(lang="en")
+	head
+		+head(array)
+	body(class= array.body_class)
+		+header
+		.wrapper
+			.base
+				block content_block
+			+footer
+			block scripts
+				script(src='js/main.js')
+		//- block local_popup
