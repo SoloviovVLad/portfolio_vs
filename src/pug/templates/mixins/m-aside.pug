@@ -1,0 +1,6 @@
+mixin aside(data)
+	.aside
+		nav.aside_nav
+			ul.aside_list
+				each item in data.list
+					li.aside_list__item!= item

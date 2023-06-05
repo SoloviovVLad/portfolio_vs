@@ -7,7 +7,7 @@
 	--footer-indent-right: 7.6rem;
 
 	@include bp($point_0, min) {
-		--gl-indent: 12rem;
+		--gl-indent: 9rem;
 	}
 
 	@include bp($point_0 - 1, $point_1) {
@@ -15,7 +15,7 @@
 	}
 
 	@include bp($point_1 - 1, $point_4) {
-		--gl-indent: 3.9rem;
+		--gl-indent: 7rem;
 	}
 	@include bp($point_4 - 1) {
 		--gl-indent: 1.5rem;
@@ -35,6 +35,8 @@ html {
 	font: 400 10px $font_1;
 
 	font-size: 10px;
+	scroll-behavior: smooth;
+
 }
 
 body {
@@ -52,10 +54,16 @@ body {
 
 	background: $body_bg;
 
+
+	cursor: none;
+
 	&.body--open_menu {
 		overflow: hidden;
 	}
 
+	&.body--scroll_mod {
+		overflow: hidden;
+	}
 	@supports (display: grid) {
 		display: block;
 	}
@@ -65,9 +73,14 @@ body {
 	position: fixed;
 	top: 0;
 	left: 0;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
 	width: 100%;
 	height: 100vh;
-	background-color: $white;
+	background-color: $body_bg;
 
 	opacity: 1;
 	transition: opacity 0.3s;
@@ -77,6 +90,22 @@ body {
 	.body--loaded & {
 		pointer-events: none;
 		opacity: 0;
+		z-index: 0;
+	}
+
+	.loader {
+		border-radius: 50%;
+		border: 5px solid #f3f3f3;
+		position: relative;
+	}
+
+	.preloader_ring {
+
+	}
+
+	.preloader_ring__circle {
+		transform-origin: center;
+		transform: rotate(-90deg);
 	}
 }
 
@@ -88,12 +117,22 @@ body {
 	min-height: 100%;
 	height: auto!important;
 	overflow-x: hidden;
+
+	//smooth scrolling
+
+	#smooth_scroll_wrapper {
+		@include bp($point_4, min) {
+			position: fixed;
+			top: 0;
+			left: 0;
+		}
+	}
 }
 
 .base {
 	width: 100%;
 	position: relative;
-	padding: var(--height-header) 0 0;
+	// padding: var(--height-header) 0 0;
 
 	flex: 1 0 auto;
 }
@@ -106,4 +145,17 @@ a {
 	&:focus {
 		text-decoration: none;
 	}
+}
+
+::-webkit-scrollbar {
+	width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $white;
+}
+
+/* Стилизация трека скроллбара */
+::-webkit-scrollbar-track {
+	background-color: $gray_2;
 }

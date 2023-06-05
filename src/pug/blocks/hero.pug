@@ -1,0 +1,40 @@
+-
+	content = [
+		{
+			mod: true,
+			list:	['HELLO,', 'MY NAME IS', 'VLAD'],
+		},
+		{
+			mod: true,
+			list: ['I AM', 'FRONT-END', 'DEVELOPER'],
+		},
+		{
+			mod: true,
+			list: ['4+', 'years of', 'Experience'],
+		},
+		{
+			mod: true,
+			list: ['More', 'than 20+', 'projects'],
+		},
+		{
+			mod: true,
+			list: ['WELCOME', 'TO MY', 'PORTFOLIO'],
+		},
+	]
+
+section.section.hero
+	.section_in.js-hero-in
+		.hero__content
+			ul.hero_list.js-hero-list
+				each item in content
+					li.hero_list__item.js-hero-item(class= item.mod ? 'hero_list__item--hidden_mod' : '')
+						each word in item.list
+							span!= word
+		a.hero__icon.hero__icon--opacity_mod.js-hero-arrow(href='#')
+			.hero__icon_w
+				+icon('arrow', 'icon--size_mod')
+		//- - var n = 0;
+		//- while n < 1000
+		//- 	img(src="images/news_1.jpg", alt=`${n++}`)
+
+

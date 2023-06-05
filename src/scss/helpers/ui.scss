@@ -19,7 +19,7 @@
 		transition: color .3s ease-in-out;
 
 		&:hover {
-			color: $orange;
+			// color: $orange;
 		}
 	}
 
@@ -39,5 +39,36 @@
 	margin-left: 1rem;
 	margin-right: 1rem;
 
-	color: $gray_4;
+	// color: $gray_4;
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+	z-index: 1001;
+
+	display: flex;
+  width: 3rem;
+  height: 3rem;
+
+	color: $lines;
+
+  border-radius: 50%;
+	border: 1px solid currentColor;
+
+	transform: translate(-50%, -50%);
+	pointer-events: none;
+
+	&::before {
+		content: '';
+		display: block;
+		margin: auto;
+
+		border-radius: 50%;
+		border: 1px solid currentColor;
+
+		width: .5rem;
+		height: .5rem;
+	}
 }

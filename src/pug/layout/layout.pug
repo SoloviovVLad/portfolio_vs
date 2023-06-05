@@ -2,6 +2,7 @@ include ../templates/project-mixins
 include ../templates/global-mixins
 include ../templates/mixins/m-header
 include ../templates/mixins/m-footer
+include ../templates/mixins/m-aside
 
 block vars
 block project_vars
@@ -11,9 +12,15 @@ html(lang="en")
 	head
 		+head(array)
 	body(class= array.body_class)
-		+header
+		//- .preloader
+		//- 	svg.preloader_ring(width='80' height='80')
+		//- 		circle.preloader_ring__circle(stroke = '#fff' stroke-width='3' cx='40' cy='40' r = '34' fill='transparent')
+		.custom-cursor
 		.wrapper
-			.base
+			+aside({
+				list: ['Home', 'About', 'Contact', 'Projects']
+			})
+			.base#smooth_scroll_wrapper
 				block content_block
 			+footer
 			block scripts

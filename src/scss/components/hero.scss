@@ -1,0 +1,145 @@
+canvas {
+	@include stretch;
+}
+
+.hero {
+	width: 100%;
+	height: var(--full-screen);
+
+	.section_in {
+		position: relative;
+
+		height: 100%;
+	}
+
+	@include bp($point_4, min) {
+		padding: 5rem;
+	}
+
+	@include bp($point_4 - 1) {
+		padding: 2.5rem;
+	}
+}
+
+.hero__content {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.hero_list {
+	position: relative;
+}
+
+.hero_list__item {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	font-family: $Russo;
+	font-weight: 700;
+	letter-spacing: .12em;
+	line-height: 1.4;
+	color: $white;
+
+	@include bp($point_0, min) {
+		font-size: 7rem;
+	}
+
+	@include bp($point_0 - 1, $point_4) {
+		font-size: 6rem;
+	}
+
+	@include bp($point_4 - 1, $point_6) {
+		font-size: 4.5rem;
+	}
+
+	@include bp($point_6 - 1) {
+		font-size: 3.5rem;
+	}
+
+	&.hero_list__item--hidden_mod {
+		span {
+			opacity: 0;
+			pointer-events: none;
+			transform: translateY(-50%);
+		}
+
+	}
+
+	&.hero_list__item--show {
+		span {
+			animation: fadeIn .5s ease-in-out forwards;
+		}
+	}
+
+	span {
+		display: block;
+		text-transform: uppercase;
+		// transition: opacity 1s ease, transform 1s ease;
+
+		&:nth-child(1) {
+			animation-delay: 0s;
+		}
+
+		&:nth-child(2) {
+			animation-delay: .5s;
+		}
+
+		&:nth-child(3) {
+			animation-delay: 1s;
+		}
+	}
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero__icon {
+	position: absolute;
+	bottom: 10%;
+	left: calc(50% - 1.5rem);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 4rem;
+	height: 4rem;
+
+	transform: rotate(90deg);
+	transition: transform 1s ease-in-out, opacity .3s ease-in-out;
+
+	&.hero__icon--opacity_mod {
+		opacity: 0;
+		transform: rotate(90deg) translateX(-5rem);
+		pointer-events: none;
+	}
+
+	&:hover {
+		.hero__icon_w {
+			opacity: .6;
+			transform: translateX(2rem) scale(.9);
+		}
+	}
+}
+
+.hero__icon_w {
+	position: absolute;
+
+	width: 4rem;
+	height: 4rem;
+
+	color: $white;
+
+	transition: transform .3s ease-in-out, opacity .3s ease-in-out;
+}

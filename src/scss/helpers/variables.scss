@@ -1,6 +1,7 @@
 //---------------------------------------------fonts
 $font_1: 'Oswald', sans-serif;
 $openSans: 'OpenSans', sans-serif;
+$Russo: 'Russo', sans-serif;
 
 $font_size_base: 1.6rem;
 //---------------------------------------------fonts###
@@ -12,21 +13,20 @@ $black: #000;
 $color_text_base: $black;
 $color_link_base: #4aa3df;
 
-$body_bg: $white;
+$body_bg: #1f1f23;
 
-$dark_green: #013D3D;
-$green_1: #008556;
-$green_2: #006A6A;
-$green_3: #9DDEBF;
-$green_4: #6EEEA1;
+$gray_1: #1f1f23;
+$gray_2: #27272c;
+$gray_3: #4f4f59;
 
-$black_1: #474747;
+$lines: #353535;
+
 
 //---------------------------------------------colors###
 
 //---------------------------------------------layout
 
-$page_width: 168rem;
+$page_width: 100%;
 
 //---------------------------------------------layout###
 
@@ -38,7 +38,7 @@ $gl_radius: 0.5rem;
 
 //---------------------------------------------media points
 
-$point_0: 1441px;
+$point_0: 1440px;
 $point_1: 1200px;
 $point_2: 1024px;
 $point_3: 1023px;

@@ -1,9 +1,95 @@
 extends layout/layout
 
 block vars
-	//- include ./templates/mixins/m-example
-	- array = {body_class:'', title_inner:'Index'}
+	include ./templates/mixins/m-year-block
+	- array = {body_class:'', title_inner:'Portfolio - Home'}
 
 block content_block
-	//- include ./blocks/example
-	h1 Hello, let's start
+	include ./blocks/lines-grid
+	include ./blocks/hero
+	+year_block({
+		title: '2019',
+		mod: 'js-year-block-anchor',
+		list: [
+			{
+				prlxSpeed: -50,
+				img: '1'
+			},
+			{
+				prlxSpeed: -100,
+				img: '2'
+			},
+			{
+				prlxSpeed: -200,
+				img: '3'
+			}
+		]
+	})
+	+year_block({
+		title: '2020',
+		list: [
+			{
+				prlxSpeed: 120,
+				img: '4'
+			},
+			{
+				prlxSpeed: -180,
+				img: '5'
+			},
+			{
+				prlxSpeed: -60,
+				img: '6'
+			}
+		]
+	})
+	+year_block({
+		title: '2021',
+		list: [
+			{
+				prlxSpeed: -90,
+				img: '7'
+			},
+			{
+				prlxSpeed: -30,
+				img: '8'
+			},
+			{
+				prlxSpeed: -150,
+				img: '9'
+			}
+		]
+	})
+	+year_block({
+		title: '2022',
+		list: [
+			{
+				prlxSpeed: -60,
+				img: '10'
+			},
+			{
+				prlxSpeed: -20,
+				img: '11'
+			},
+			{
+				prlxSpeed: -100,
+				img: '12'
+			}
+		]
+	})
+	+year_block({
+		title: '2023',
+		list: [
+			{
+				prlxSpeed: -35,
+				img: '13'
+			},
+			{
+				prlxSpeed: -50,
+				img: '14'
+			},
+			{
+				prlxSpeed: -120,
+				img: '15'
+			}
+		]
+	})

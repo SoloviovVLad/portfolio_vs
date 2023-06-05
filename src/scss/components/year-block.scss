@@ -1,0 +1,157 @@
+.year_block {
+	border-top: 1px solid $lines;
+
+	.section_in {
+
+	}
+
+	@include bp($point_5 - 1) {
+		padding: 3rem var(--gl-indent) 6rem;
+	}
+}
+
+.year_block__title {
+	padding-left: 1rem;
+
+	font-family: $Russo;
+	font-weight: 700;
+	-webkit-text-stroke: 1px $white;
+	letter-spacing: .05em;
+	color: transparent;
+	width: max-content;
+
+	transition: color .3s ease-in-out;
+
+	@include bp($point_0, min) {
+		font-size: 18rem;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		font-size: 12rem;
+	}
+
+	@include bp($point_3, $point_5) {
+		font-size: 8rem;
+	}
+
+	@include bp($point_5 - 1) {
+		font-size: 5rem;
+	}
+
+	&:hover {
+		color: $white;
+	}
+}
+
+.year_block_list {
+	position: relative;
+
+	@include bp($point_4, min) {
+		display: flex;
+	}
+}
+
+.year_block_list__item {
+	padding: 1rem;
+
+	transition: transform 1s ease-in-out;
+
+	@include bp($point_4, min) {
+		width: 33.33%;
+	}
+
+	@include bp($point_4 - 1) {
+		&:first-child {
+			position: relative;
+			z-index: 15;
+		}
+
+		&:nth-child(2),
+		&:last-child {
+			position: absolute;
+			top: 0;
+
+			width: 50%;
+		}
+
+		&:nth-child(2) {
+			z-index: 10;
+		}
+
+		&:last-child {
+			z-index: 5;
+		}
+	}
+
+	@include bp($point_4 - 1, $point_5) {
+		width: 50%;
+
+		&:nth-child(2),
+		&:last-child {
+			width: 50%;
+		}
+
+		&:nth-child(2) {
+			left: 25%;
+			transform: scale(.9);
+		}
+
+		&:last-child {
+			right: 0;
+			transform: scale(.8);
+		}
+	}
+
+	@include bp($point_5 - 1) {
+		width: 90%;
+
+		&:nth-child(2),
+		&:last-child {
+			width: 90%;
+		}
+
+		&:nth-child(2) {
+			right: 5%;
+			transform: translateY(2rem)
+		}
+
+		&:last-child {
+			right: 0;
+			transform: translateY(4rem)
+		}
+	}
+}
+
+.year_block_list__item_in {
+	position: relative;
+}
+
+.year_block_list__item_overlay {
+	@include stretch;
+
+	background-color: $gray_1;
+	opacity: .5;
+}
+
+
+.year_block_list__item_img_w {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.year_block_list__item_img {
+	@include cover_img;
+
+	@include bp($point_0, min) {
+		min-height: 70rem;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		min-height: 55rem;
+	}
+
+	@include bp($point_3) {
+		min-height: 40rem;
+	}
+}

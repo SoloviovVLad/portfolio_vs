@@ -1,0 +1,16 @@
+mixin year_block(data)
+	section.section.year_block(class=data.mod)
+		.section_in
+			a.year_block__title(href='#')!= data.title
+			ul.year_block_list.parallax-container
+				each item in data.list
+					li.year_block_list__item.parallax-item(data-parallax-speed!= item.prlxSpeed)
+						.year_block_list__item_in
+							a.year_block_list__item_link(href='#')
+							.year_block_list__item_overlay
+							+picture({
+								class: 'year_block_list__item_img_w',
+								class_img: 'year_block_list__item_img',
+								img: `images/year_block/year_img_${item.img}.jpg`,
+								alt: 'year img'
+							})
