@@ -1,0 +1,9 @@
+extends layout/layout
+
+block vars
+	include ./templates/mixins/m-year-block
+	- array = {body_class:'', title_inner:'Portfolio - About'}
+
+block content_block
+	include ./blocks/lines-grid
+
