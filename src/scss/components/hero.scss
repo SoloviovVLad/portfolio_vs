@@ -79,6 +79,10 @@ canvas {
 		display: block;
 		text-transform: uppercase;
 		// transition: opacity 1s ease, transform 1s ease;
+		&.hero_list__item_span--stroke {
+			color: transparent;
+			-webkit-text-stroke: 1px $white;
+		}
 
 		&:nth-child(1) {
 			animation-delay: 0s;
