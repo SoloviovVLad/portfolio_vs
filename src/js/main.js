@@ -1,3 +1,4 @@
+import aside from './components/aside';
 import canvas from './components/canvas';
 import cursor from './components/cursor';
 import hero from './components/hero';
@@ -20,4 +21,5 @@ documentReady(() => {
 	yearBlock();
 	scrollSmoother();
 	cursor();
+	aside();
 });

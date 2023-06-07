@@ -2,17 +2,30 @@ const linesGrid = () => {
 	const linesItem = document.querySelectorAll('.lines_grid__item');
 	const lineClassAnim = 'lines_grid__item--animate';
 
-	const tabletLineRemove = () => {
-		const screenWidth = window.innerWidth;
+	// const tabletLineRemove = () => {
+	// 	const screenWidth = window.innerWidth;
 
-		if (screenWidth < 768) {
-			const lineToRemove = document.querySelectorAll('.lines_grid__item:nth-child(-n+4)');
+	// 	if (screenWidth < 768) {
+	// 		const lineToRemove = document.querySelectorAll('.lines_grid__item');
 
-			lineToRemove.forEach((line) => {
-				line.remove();
-			});
-		}
-	};
+	// 		if (linesItem.length > 5) {
+	// 			for (let i = 0; i < linesItem.length; i++) {
+
+	// 				lineToRemove.forEach((line) => {
+	// 					line.remove();
+	// 				});
+	// 				console.log(linesItem.length);
+	// 			}
+	// 		}
+	// 		removeAnimationClass();
+	// 	}
+	// };
+
+	// const addAnimationClass = () => {
+	// 	linesItem.forEach((line) => {
+	// 		line.classList.add(lineClassAnim);
+	// 	});
+	// };
 
 	const removeAnimationClass = () => {
 		let index = 0;
@@ -30,9 +43,14 @@ const linesGrid = () => {
 	};
 
 	if (linesItem) {
-		tabletLineRemove();
+		// tabletLineRemove();
 		removeAnimationClass();
 	}
+
+	window.addEventListener('resize', () => {
+		// tabletLineRemove();
+		removeAnimationClass();
+	});
 };
 
 export default linesGrid;

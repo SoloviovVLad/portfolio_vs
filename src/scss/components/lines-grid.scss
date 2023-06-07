@@ -38,6 +38,29 @@
 		}
 	}
 
+	@include bp($point_4 - 1) {
+		&:nth-last-child(-n + 4) {
+			display: none;
+		}
+
+		&:nth-last-child(5) {
+			&::after {
+				content: '';
+				position: absolute;
+
+				top: 0;
+				right: 0;
+
+				width: 1px;
+				height: 100%;
+
+				background-color: $lines;
+
+				transition: transform 1.7s ease-in-out;
+			}
+		}
+	}
+
 	&::before{
 		content: '';
 		position: absolute;

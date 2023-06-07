@@ -71,4 +71,8 @@
 		width: .5rem;
 		height: .5rem;
 	}
+
+	@include bp($point_4 - 1) {
+		display: none;
+	}
 }

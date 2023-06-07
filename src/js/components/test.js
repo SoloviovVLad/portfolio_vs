@@ -7,7 +7,7 @@ const hero = () => {
 		heroItem: '.js-hero-item',
 		heroArrow: '.js-hero-arrow',
 		sectionAnchor: '.js-year-block-anchor',
-		aside: '.js-aside',
+		aside: 'js-aside',
 	};
 
 	const mods = {
@@ -22,7 +22,7 @@ const hero = () => {
 	const heroList = document.querySelector(selectors.heroList);
 	const heroItem = document.querySelectorAll(selectors.heroItem);
 	const heroArrow = document.querySelector(selectors.heroArrow);
-	const asideBlock = document.querySelector(selectors.aside);
+
 	if (heroList && heroItem) {
 		let maxW = 0;
 		let maxH = 0;
@@ -99,7 +99,6 @@ const hero = () => {
 					if (nextItemIndex === heroItem.length - 1) {
 						if (heroArrow.classList.contains(mods.heroArrow)) {
 							heroArrow.classList.remove(mods.heroArrow);
-							asideBlock.classList.remove(mods.asideHidden);
 							document.body.classList.remove(mods.bodyScroll);
 						}
 					}
@@ -117,9 +116,13 @@ const hero = () => {
 				}
 			};
 
+			handleWheel();
+
 			if (window.innerWidth > 768) {
-				window.addEventListener('wheel', handleWheel);
+				console.log('dad');
 			} else {
+				console.log(window.offsetWidth);
+
 				const startAutoAnimation = () => {
 					intervalId = setInterval(() => {
 						if (currentItemIndex < heroItem.length - 1) {
@@ -134,12 +137,11 @@ const hero = () => {
 							if (heroArrow.classList.contains(mods.heroArrow)) {
 								heroArrow.classList.remove(mods.heroArrow);
 								document.body.classList.remove(mods.bodyScroll);
-								asideBlock.classList.remove(mods.asideHidden);
 							}
 						} else {
 							stopAutoAnimation();
 						}
-					}, 2000); // Интервал автоматической прокрутки - 3000 миллисекунд (3 секунды)
+					}, 3000); // Интервал автоматической прокрутки - 3000 миллисекунд (3 секунды)
 				};
 
 				const stopAutoAnimation = () => {
@@ -150,6 +152,7 @@ const hero = () => {
 				startAutoAnimation();
 			}
 
+			window.addEventListener('wheel', handleWheel);
 			heroArrow.addEventListener('click', scrollToSection);
 
 			initialize();

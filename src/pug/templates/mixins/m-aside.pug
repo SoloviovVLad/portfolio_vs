@@ -1,5 +1,8 @@
 mixin aside(data)
-	.aside
+	.aside.js-aside.aside--hidden_mod
+		.aside__menu_overlay
+		.aside_burger.js-burger-triger
+			span.aside_burger__decor
 		nav.aside_nav
 			ul.aside_list
 				each item in data.list
