@@ -2,23 +2,79 @@
 	content = [
 		{
 			mod: true,
-			list:	['HELLO,', 'MY NAME IS', 'VLAD'],
+			list:	[, 'MY NAME IS', 'VLAD'],
+			list: [
+				{
+					title: 'HELLO,',
+				},
+				{
+					title: 'MY NAME IS',
+				},
+				{
+					title: 'VLAD',
+					mod: 'hero_list__item_span--stroke'
+				}
+			],
 		},
 		{
 			mod: true,
-			list: ['I AM', 'FRONT-END', 'DEVELOPER'],
+			list: [
+				{
+					title: 'I AM',
+				},
+				{
+					title: 'FRONT-END',
+					mod: 'hero_list__item_span--stroke'
+				},
+				{
+					title: 'DEVELOPER',
+				}
+			],
 		},
 		{
 			mod: true,
-			list: ['4+', 'years of', 'Experience'],
+			list: [
+				{
+					title: '4+',
+				},
+				{
+					title: 'years of',
+				},
+				{
+					title: 'Experience',
+					mod: 'hero_list__item_span--stroke'
+				}
+			],
 		},
 		{
 			mod: true,
-			list: ['More', 'than 20+', 'projects'],
+			list: [
+				{
+					title: 'More',
+				},
+				{
+					title: 'than 20+',
+					mod: 'hero_list__item_span--stroke'
+				},
+				{
+					title: 'projects',
+				}
+			],
 		},
 		{
 			mod: true,
-			list: ['WELCOME', 'TO MY', 'PORTFOLIO'],
+			list: [
+				{
+					title: 'WELCOME',
+				},
+				{
+					title: 'TO MY',
+				},
+				{
+					title: 'PORTFOLIO',
+					mod: 'hero_list__item_span--stroke'
+				}
+			],
 		},
 	]
 
@@ -29,7 +85,7 @@ section.section.hero
 				each item in content
 					li.hero_list__item.js-hero-item(class= item.mod ? 'hero_list__item--hidden_mod' : '')
 						each word in item.list
-							span!= word
+							span(class= word.mod)!= word.title
 		a.hero__icon.hero__icon--opacity_mod.js-hero-arrow(href='#')
 			.hero__icon_w
 				+icon('arrow', 'icon--size_mod')

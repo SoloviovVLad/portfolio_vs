@@ -4,6 +4,7 @@ const canvas = () => {
 	const baseWrap = document.querySelector('.base');
 	const canvasWidth = baseWrap.getBoundingClientRect().width;
 	const canvasHeight = baseWrap.getBoundingClientRect().height;
+	let countCircles = 0;
 
 	// Устанавливаем размеры canvas
 	canvas.width = canvasWidth;
@@ -11,8 +12,13 @@ const canvas = () => {
 
 	const circles = [];
 
+	if (window.innerWidth > 768) {
+		countCircles = 50;
+	} else {
+		countCircles = 20;
+	}
 	// Создаем объекты-круги
-	for (let i = 0; i < 50; i++) {
+	for (let i = 0; i < countCircles; i++) {
 		const circle = {
 			x: Math.random() * canvas.width, // Случайная координата x
 			y: Math.random() * canvas.height, // Случайная координата y
@@ -21,6 +27,7 @@ const canvas = () => {
 			velocityY: 0, // Скорость по оси Y
 			friction: 0.98, // Коэффициент трения
 			color: 'white', // Фиксированный белый цвет
+			opacity: Math.random() * 0.25 + 0.7,
 		};
 
 		circles.push(circle);
@@ -40,12 +47,16 @@ const canvas = () => {
 			circle.x += circle.velocityX;
 			circle.y += circle.velocityY;
 
+			context.globalAlpha = circle.opacity;
+
 			// Рисуем круг с заданными параметрами
 			context.beginPath();
 			context.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
 			context.fillStyle = circle.color;
 			context.fill();
 			context.closePath();
+
+			context.globalAlpha = 1;
 		}
 	}
 
