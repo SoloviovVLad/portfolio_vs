@@ -1,0 +1,65 @@
+-
+	list_skills = [
+		{
+			img: 'html',
+			title: 'HTML',
+		},
+		{
+			img: 'css',
+			title: 'CSS',
+		},
+		{
+			img: 'sass',
+			title: 'Sass / Scss',
+		},
+		{
+			img: 'pug',
+			title: 'Pug',
+		},
+		{
+			img: 'js',
+			title: 'JavaScript',
+		},
+		{
+			img: 'jq',
+			title: 'JQuery',
+		},
+
+		{
+			img: 'shopify',
+			title: 'Shopify',
+		},
+		{
+			img: 'webflow',
+			title: 'Webflow',
+		},
+		{
+			img: 'gulp',
+			title: 'Gulp',
+		},
+		{
+			img: 'slick',
+			title: 'Slick',
+		},
+		{
+			img: 'swiper',
+			title: 'SwiperJS',
+		},
+		{
+			img: 'gsap',
+			title: 'GSAP',
+		},
+
+
+	]
+section.section.skills.skills--hidden_mod
+	.section_in
+		.skills__wrap
+			.skills__title.main_title My skills
+			ul.skills_list
+				each item in list_skills
+					li.skills_list__item
+						.skills_list__item_in
+							.skills_list__item_img_w
+								img.skills_list__item_img.lazy(src= `images/skills/icon_${item.img}.png`, alt='logo')
+							.skills_list__item_title!= item.title

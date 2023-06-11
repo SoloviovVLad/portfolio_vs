@@ -1,0 +1,216 @@
+.certificate {
+	transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+
+	&.certificate--hidden_mod {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+}
+
+.certificate_slide {
+	display: flex;
+
+	@include bp($point_0, min) {
+		min-height: 75rem;
+	}
+
+	@include bp($point_0 - 1, $point_6) {
+		min-height: 52rem;
+	}
+
+	@include bp($point_6 - 1) {
+		min-height: 42rem;
+	}
+}
+.certificate_slide__in {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+
+	background-color: $gray_2;
+
+	@include bp($point_6, min) {
+		padding: 2rem 2rem 4rem;
+	}
+
+	@include bp($point_6 - 1) {
+		padding: 1.5rem 1rem 2rem;
+	}
+}
+
+.certificate__slider {
+	padding: 0 1rem;
+}
+
+.certificate__wrapper {
+	min-height: 100%;
+	align-items: stretch;
+}
+
+.certificate_slide__img_w {
+	width: 100%;
+	height: 100%;
+	flex-shrink: 0;
+
+	@include bp($point_0, min) {
+		max-height: 50rem;
+	}
+
+	@include bp($point_0 - 1, $point_6) {
+		max-height: 30rem;
+	}
+
+	@include bp($point_6 - 1) {
+		max-height: 25rem;
+	}
+
+	&:not(:last-child) {
+		@include bp($point_6, min) {
+			margin-bottom: 3rem;
+		}
+
+		@include bp($point_6 - 1) {
+			margin-bottom: 1.5rem;
+		}
+	}
+}
+
+.certificate_slide__plug {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 100%;
+	height: 100%;
+	max-height: 50rem;
+	background-color: $gray_4;
+}
+
+.certificate_slide__plug_word {
+	font-size: 4rem;
+	font-family: $Russo;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	-webkit-text-stroke: 1px $white;
+
+	color: transparent;
+}
+
+.certificate_slide__img {
+	@include contain_img;
+	height: 100%;
+}
+
+.certificate_slide__content {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+}
+
+.certificate_slide__title {
+	font-family: $font_1;
+	letter-spacing: .05em;
+	color: $white;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 1.7rem;
+		}
+
+		@include bp($point_0 - 1) {
+			margin-bottom: 1rem;
+		}
+	}
+
+	@include bp($point_0, min) {
+		font-size: 2.4rem;
+	}
+
+	@include bp($point_0 - 1, $point_6) {
+		font-size: 1.8rem;
+	}
+
+	@include bp($point_6 - 1) {
+		font-size: 1.6rem;
+	}
+}
+
+.certificate_slide__date {
+	margin-top: auto;
+
+	font-family: $openSans;
+
+	color: $white;
+
+	&:not(:last-child) {
+		@include bp($point_0, min) {
+			margin-bottom: 1.7rem;
+		}
+
+		@include bp($point_0 - 1, $point_6) {
+			margin-bottom: 1rem;
+		}
+
+		@include bp($point_6 - 1) {
+			margin-bottom: .7rem;
+		}
+	}
+
+	@include bp($point_0, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_0 - 1, $point_6) {
+		font-size: 1.6rem;
+	}
+
+	@include bp($point_6 - 1) {
+		font-size: 1.4rem;
+	}
+}
+
+.certificate_slide__descr {
+	font-family: $openSans;
+
+	color: $white;
+
+	@include bp($point_0, min) {
+		font-size: 2rem;
+	}
+
+	@include bp($point_0 - 1, $point_6) {
+		font-size: 1.6rem;
+	}
+
+	@include bp($point_6 - 1) {
+		font-size: 1.4rem;
+	}
+}
+.certificate__pagination {
+	display: flex;
+	padding-right: 1rem;
+
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+
+	@include bp($point_4, min) {
+		justify-content: flex-end;
+	}
+}
+
+.certificate_btn {
+	width: 6rem;
+	height: 6rem;
+	color: $white;
+}
+
+.swiper-button-prev {
+	margin-right: 2rem;
+}
+
+.swiper-button-next {
+	svg {
+		transform: rotate(-180deg);
+	}
+}

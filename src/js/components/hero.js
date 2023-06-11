@@ -18,7 +18,7 @@ const hero = () => {
 		asideHidden: 'aside--hidden_mod',
 	};
 
-	const hero 	= document.querySelector(selectors.hero);
+	const hero = document.querySelector(selectors.hero);
 	const heroList = document.querySelector(selectors.heroList);
 	const heroItem = document.querySelectorAll(selectors.heroItem);
 	const heroArrow = document.querySelector(selectors.heroArrow);
@@ -50,7 +50,17 @@ const hero = () => {
 	}
 
 	if (heroItem) {
-		document.body.classList.add(mods.bodyScroll);
+		if (hero) {
+			document.body.classList.add(mods.bodyScroll);
+		} else {
+			document.body.classList.add(mods.bodyScroll);
+
+			setTimeout(() => {
+				document.body.classList.remove(mods.bodyScroll);
+			// }, 4000);
+			}, 0);
+		}
+
 		const duration = 4000;
 		// const duration = 0;
 
@@ -150,9 +160,13 @@ const hero = () => {
 				startAutoAnimation();
 			}
 
-			heroArrow.addEventListener('click', scrollToSection);
+			if (heroArrow) {
+				heroArrow.addEventListener('click', scrollToSection);
+			}
 
-			initialize();
+			if (hero) {
+				initialize();
+			}
 		}, duration);
 	}
 };

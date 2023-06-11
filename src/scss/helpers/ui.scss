@@ -76,3 +76,12 @@
 		display: none;
 	}
 }
+
+.element_anim {
+	transition: opacity .7s ease-in-out, transform .7s ease-in-out;
+}
+
+.element_anim--hidden {
+	transform: translateY(100%);
+	opacity: 0;
+}

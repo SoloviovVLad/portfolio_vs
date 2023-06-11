@@ -6,11 +6,13 @@
 
 //plugins
 
-// @import '../../node_modules/swiper/swiper.scss';
+@import '../../node_modules/swiper/swiper.scss';
 
 // components
 
 @import './components/hero.scss';
 @import './components/lines-grid.scss';
 @import './components/year-block.scss';
-@import './components/canvas.scss'
+@import './components/canvas.scss';
+@import './components/skills.scss';
+@import './components/certificate.scss';

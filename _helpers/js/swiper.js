@@ -8,6 +8,10 @@ const slider = () => {
 		slidesPerView: 1,
 		loop: true,
 		autoplay: true,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
 	});
 };
 

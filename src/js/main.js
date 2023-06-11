@@ -1,14 +1,17 @@
+import scrollSmoother from './helpers/scrollSmoother';
 import aside from './components/aside';
 import canvas from './components/canvas';
+import slider from './components/certificate';
 import cursor from './components/cursor';
 import hero from './components/hero';
 import linesGrid from './components/lines-grid';
 import yearBlock from './components/year-block';
 import documentReady from './helpers/documentReady';
-import scrollSmoother from './helpers/scrollSmoother';
 // import preloader from './helpers/preloader';
 import viewHeight from './helpers/viewHeight';
 import lazyImages from './modules/lazyImages';
+import skills from './components/skills';
+import showAnimation from './components/showAnimation';
 
 documentReady(() => {
 	// console.log('Document is ready');
@@ -22,4 +25,7 @@ documentReady(() => {
 	scrollSmoother();
 	cursor();
 	aside();
+	slider();
+	skills();
+	showAnimation();
 });

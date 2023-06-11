@@ -2,6 +2,7 @@ const smoothScroll = () => {
 	const body = document.body;
 	const scrollWrap = document.querySelector('#smooth_scroll_wrapper');
 	const height = scrollWrap.getBoundingClientRect().height - 1;
+	// const height = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
 	const speed = 0.04;
 
 	let offset = 0;
@@ -22,6 +23,7 @@ const smoothScroll = () => {
 	smoothScrollAnimation();
 };
 
+window.addEventListener('load', smoothScroll);
 window.addEventListener('resize', smoothScroll);
 
 export default smoothScroll;

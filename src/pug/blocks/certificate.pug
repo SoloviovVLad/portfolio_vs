@@ -1,0 +1,54 @@
+-
+	list = [
+		{
+			img: 'diplom.jpg',
+			title: 'CHERNIHIV POLYTECHNIC NATIONAL UNIVERSITY',
+			date: '2017 - 2021',
+			descr: 'Bachelor / Computer Engineering',
+		},
+		{
+			soon: true,
+			title: 'CHERNIHIV POLYTECHNIC NATIONAL UNIVERSITY',
+			date: '2022 - 2024',
+			descr: 'Master / Software engineering',
+		},
+		{
+			img: 'beetroot-diplom.jpg',
+			title: 'BEETROOT ACADEMY',
+			date: 'February - June 2020',
+			descr: 'Front-End Development',
+		},
+		{
+			soon: true,
+			title: 'BEETROOT ACADEMY',
+			date: 'Start in June and end in September',
+			descr: 'Advanced JavaScript/React',
+		},
+	]
+
+section.section.certificate.certificate--hidden_mod
+	.section_in
+		.certificate__wrap
+			.certificate__title.main_title
+			.certificate__pagination
+				.certificate_btn.swiper-button-prev
+					+icon('slider_arrow', 'icon--size_mod')
+				.certificate_btn.swiper-button-next
+					+icon('slider_arrow', 'icon--size_mod')
+			.certificate__slider.swiper.js-slider-certificate
+				.certificate__wrapper.swiper-wrapper
+					each item in list
+						.certificate_slide.swiper-slide
+							.certificate_slide__in
+								.certificate_slide__img_w
+									if item.img
+										a.certificate_slide__img_link(href='#')
+										img.certificate_slide__img(src=`images/certificate/${item.img}`, alt="")
+									else
+										.certificate_slide__plug
+											.certificate_slide__plug_word Soon
+								.certificate_slide__content
+									.certificate_slide__title!= item.title
+									.certificate_slide__date!= item.date
+									.certificate_slide__descr!= item.descr
+
