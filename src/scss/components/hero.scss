@@ -42,6 +42,7 @@ canvas {
 	font-weight: 700;
 	letter-spacing: .12em;
 	line-height: 1.4;
+
 	color: $white;
 
 	@include bp($point_0, min) {
@@ -66,7 +67,6 @@ canvas {
 			pointer-events: none;
 			transform: translateY(-50%);
 		}
-
 	}
 
 	&.hero_list__item--show {
@@ -78,10 +78,11 @@ canvas {
 	span {
 		display: block;
 		text-transform: uppercase;
-		// transition: opacity 1s ease, transform 1s ease;
+
 		&.hero_list__item_span--stroke {
-			color: transparent;
 			-webkit-text-stroke: 1px $white;
+
+			color: transparent;
 		}
 
 		&:nth-child(1) {
@@ -113,6 +114,7 @@ canvas {
 	position: absolute;
 	bottom: 10%;
 	left: calc(50% - 1.5rem);
+	
 	display: flex;
 	align-items: center;
 	justify-content: center;

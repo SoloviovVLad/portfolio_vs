@@ -20,10 +20,10 @@
 
 .skills__title {
 	font-family: $Russo;
-	letter-spacing: .05em;
-	color: transparent;
-
 	-webkit-text-stroke: 2px $white;
+	letter-spacing: .05em;
+
+	color: transparent;
 
 	&:not(:last-child) {
 		@include bp($point_0, min) {
@@ -64,7 +64,6 @@
 	display: flex;
 	flex-wrap: wrap;
 
-
 	@include bp($point_0, min) {
 		margin: 0 -2.5rem -2.5rem 0;
 	}
@@ -75,7 +74,6 @@
 }
 
 .skills_list__item {
-
 	transition: opacity .5s ease, transform .5s ease-in-out;
 
 	@include bp($point_0, min) {
@@ -192,6 +190,7 @@
 	font-family: $openSans;
 	font-weight: 600;
 	letter-spacing: .05em;
+
 	color: $white;
 
 	opacity: .9;

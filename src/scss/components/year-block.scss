@@ -1,24 +1,22 @@
 .year_block {
 	border-top: 1px solid $lines;
 
-	.section_in {
-
-	}
-
 	@include bp($point_5 - 1) {
 		padding: 3rem var(--gl-indent) 6rem;
 	}
 }
 
 .year_block__title {
+	width: max-content;
+
 	padding-left: 1rem;
 
 	font-family: $Russo;
 	font-weight: 700;
 	-webkit-text-stroke: 1px $white;
 	letter-spacing: .05em;
+
 	color: transparent;
-	width: max-content;
 
 	transition: color .3s ease-in-out;
 
