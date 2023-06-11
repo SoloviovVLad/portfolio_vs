@@ -9,6 +9,7 @@
 		width: var(--gl-indent);
 		height: 100%;
 		padding: 1rem;
+		z-index: 101;
 	}
 
 	@include bp($point_4 - 1) {
@@ -109,12 +110,25 @@
 .aside_list__item {
 	width: max-content;
 	height: max-content;
-	color: $white;
 
 	font-weight: 300;
 	letter-spacing: .1em;
 	text-transform: uppercase;
+
+	color: $white;
+
 	transition: transform .7s ease-in-out, opacity .7s ease-in-out;
+
+	a {
+		color: currentColor;
+
+		transition: opacity .3s ease-in-out, filter .3s ease-in-out;
+
+		&:hover {
+			filter: drop-shadow(0 0 20px rgba($white, .65));
+			opacity: .7;
+		}
+	}
 
 	&:not(:last-child) {
 		@include bp($point_4, min) {

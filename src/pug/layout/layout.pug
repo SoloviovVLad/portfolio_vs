@@ -19,8 +19,26 @@ html(lang="en")
 		.custom-cursor
 		.wrapper
 			canvas#canvas
+			include ../blocks/social
 			+aside({
-				list: ['Home', 'About me', 'Projects', 'Contact']
+				list: [
+					{
+						title: 'Home',
+						link: '/',
+					},
+					{
+						title: 'About me',
+						link: '/about.html',
+					},
+					{
+						title: 'Projects',
+						link: '/projects.html',
+					},
+					{
+						title: 'Contact',
+						link: '/contact.html',
+					},
+				]
 			})
 			.base#smooth_scroll_wrapper
 				block content_block

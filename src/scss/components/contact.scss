@@ -1,0 +1,140 @@
+.contact {
+	width: 100%;
+	height: var(--full-screen);
+
+	display: flex;
+
+	.section_in {
+		margin: auto;
+	}
+
+	overflow-y: auto;
+
+}
+
+.contact__wrap {
+	padding: 0 1rem;
+}
+
+.contact__title {
+	&:not(:last-child) {
+		margin-bottom: 3rem;
+	}
+}
+
+.contact_form {
+}
+
+.contact_form__in {
+	display: flex;
+
+	@include bp($point_4 - 1) {
+		flex-direction: column;
+	}
+}
+
+.contact_form__col {
+	background-color: $gray_2;
+
+	&:not(:last-child) {
+		margin-right: 2rem;
+
+		@include bp($point_4 - 1) {
+			border-radius: $gl_radius $gl_radius 0 0;
+		}
+	}
+
+	&:last-child {
+		@include bp($point_4 - 1) {
+			width: 100%;
+			padding-bottom: 3rem;
+			border-radius: 0 0 $gl_radius $gl_radius;
+		}
+	}
+
+ 	@include bp($point_4, min) {
+		width: 50%;
+		padding: 2rem 2rem 3rem;
+		border-radius: $gl_radius;
+	}
+
+	@include bp($point_4 - 1) {
+		width: 100%;
+		padding: 2rem 1rem 0rem;
+	}
+}
+.contact_form__label {
+	display: block;
+
+	font-size: 2rem;
+	font-family: $font_1;
+
+	letter-spacing: .05em;
+
+	color: $white;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+
+	span {
+
+	}
+}
+
+@mixin input {
+	padding: 1rem;
+
+	font-size: 1.6rem;
+	font-family: $openSans;
+
+	border-radius: $gl_radius;
+	border: 1px solid $lines;
+
+	color: $white;
+
+	background-color: transparent;
+}
+
+.contact_form__input {
+	@include input;
+
+	width: 100%;
+
+	&:not(:last-child) {
+		margin-bottom: 1.5rem;
+	}
+}
+
+
+.contact_form__textarea {
+	@include input;
+
+	width: 100%;
+	height: calc(100% - 10.1rem);
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}
+
+.contact_form__btn {
+	padding: 1rem;
+
+	max-width: 15rem;
+
+	width: 100%;
+
+	font-size: 1.8rem;
+
+	background-color: $white;
+	border-radius: $gl_radius;
+
+	color: $lines;
+	transition: filter .3s ease-in-out, background-color .3s ease-in-out;
+
+	&:hover {
+		filter: drop-shadow(0 0 10px rgba($white, 0.65));
+		background-color: rgba($white, .9);
+	}
+}

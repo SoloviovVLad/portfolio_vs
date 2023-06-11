@@ -1,7 +1,7 @@
 mixin year_block(data)
 	section.section.year_block(class=data.mod)
 		.section_in
-			a.year_block__title(href='#')!= data.title
+			a.year_block__title(href=`/projects.html#${data.title}`)!= data.title
 			ul.year_block_list.parallax-container
 				each item in data.list
 					li.year_block_list__item.parallax-item(data-parallax-speed!= item.prlxSpeed)

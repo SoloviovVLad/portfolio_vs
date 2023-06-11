@@ -1,0 +1,63 @@
+.social {
+	position: fixed;
+	top: 0;
+	left: 0;
+
+	transition: transform 1s ease-in-out;
+
+	@include bp($point_4, min) {
+		width: var(--gl-indent);
+		height: 100%;
+		padding: 1rem;
+		z-index: 101;
+	}
+
+	@include bp($point_4 - 1) {
+		display: none;
+	}
+
+	&.social--hidden_mod {
+		transform: translateX(-100%);
+	}
+}
+
+.social_nav {
+	@include bp($point_4, min) {
+		position: relative;
+		height: 100%;
+	}
+}
+
+.social_list {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+
+	height: 100%;
+}
+
+.social_list__item {
+	width: 4rem;
+	height: 4rem;
+
+	color: $white;
+
+	a {
+		width: inherit;
+		height: inherit;
+
+		color: currentColor;
+
+		transition: opacity .3s ease-in-out, filter .3s ease-in-out;
+
+		&:hover {
+			filter: drop-shadow(0 0 20px rgba($white, .65));
+			opacity: .7;
+		}
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+}

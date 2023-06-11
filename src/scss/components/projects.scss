@@ -2,6 +2,13 @@
 	.section_in {
 
 	}
+
+	transition: opacity 1s ease-in-out, transform  1s ease-in-out;
+
+	&.projects--hidden_mod {
+		opacity: 0;
+		transform: translateY(100%);
+	}
 }
 
 .projects__title {
@@ -83,10 +90,12 @@
 
 	@include bp($point_0, min) {
 		max-height: 30rem;
+		min-height: 30rem;
 	}
 
 	@include bp($point_0 - 1) {
 		max-height: 20rem;
+		min-height: 20rem;
 	}
 }
 

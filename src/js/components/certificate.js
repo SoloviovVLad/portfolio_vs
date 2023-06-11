@@ -3,7 +3,7 @@ import Swiper, { Navigation } from 'swiper/swiper-bundle';
 const slider = () => {
 	const certificateBlock = document.querySelector('.certificate');
 
-	if (certificateBlock.classList.contains('certificate--hidden_mod')) {
+	if (certificateBlock && certificateBlock.classList.contains('certificate--hidden_mod')) {
 		setTimeout(() => {
 			certificateBlock.classList.remove('certificate--hidden_mod');
 		}, 6000);

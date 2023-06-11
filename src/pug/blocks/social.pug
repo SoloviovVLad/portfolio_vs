@@ -1,0 +1,27 @@
+-
+	data = [
+		{
+			link:'https://t.me/VladSoloviov',
+			icon: 'telegram'
+		},
+		{
+			link:'https://www.linkedin.com/in/vladyslav-soloviov-3888b0230/',
+			icon: 'linkedin'
+		},
+		{
+			link:'https://github.com/SoloviovVLad',
+			icon: 'github'
+		},
+		{
+			link:'https://www.instagram.com/vladik.g6/',
+			icon: 'instagram'
+		},
+	]
+
+.social.js-social.social--hidden_mod
+	nav.social_nav
+		ul.social_list
+			each item in data
+				li.social_list__item
+					a.social_list__link(href= item.link)
+						+icon(item.icon, 'icon--size_mod')

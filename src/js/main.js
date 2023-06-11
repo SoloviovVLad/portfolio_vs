@@ -12,6 +12,9 @@ import viewHeight from './helpers/viewHeight';
 import lazyImages from './modules/lazyImages';
 import skills from './components/skills';
 import showAnimation from './components/showAnimation';
+import contact from './components/contact';
+import social from './components/social';
+import projects from './components/projects';
 
 documentReady(() => {
 	// console.log('Document is ready');
@@ -28,4 +31,7 @@ documentReady(() => {
 	slider();
 	skills();
 	showAnimation();
+	contact();
+	social();
+	projects();
 });

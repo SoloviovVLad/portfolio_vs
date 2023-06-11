@@ -6,4 +6,5 @@ mixin aside(data)
 		nav.aside_nav
 			ul.aside_list
 				each item in data.list
-					li.aside_list__item!= item
+					li.aside_list__item
+						a(href= item.link)!= item.title

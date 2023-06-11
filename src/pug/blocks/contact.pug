@@ -1,0 +1,31 @@
+-
+	inputs = [
+		{
+			id: 'name_input',
+			label: 'Name',
+			type: 'text',
+			placeholder: 'Your name'
+		},
+		{
+			id: 'email_input',
+			label: 'Email',
+			type: 'email',
+			placeholder: 'Your email'
+		}
+	]
+section.section.contact
+	.section_in
+		.contact__wrap
+			.contact__title.main_title Contact me
+			form.contact_form#form(action='#')
+				.contact_form__in
+					.contact_form__col
+						each item in inputs
+							label.contact_form__label(for!= item.id)!= item.label
+								span *
+								| :
+							input.contact_form__input(id= item.id type!= item.type placeholder!= item.placeholder required)
+					.contact_form__col
+						label.contact_form__label(for='text_area') Your message
+						textarea.contact_form__textarea#text_area(name="" placeholder='Your message')
+						button.contact_form__btn(type='submit') Send
