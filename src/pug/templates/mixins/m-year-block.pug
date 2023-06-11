@@ -6,7 +6,7 @@ mixin year_block(data)
 				each item in data.list
 					li.year_block_list__item.parallax-item(data-parallax-speed!= item.prlxSpeed)
 						.year_block_list__item_in
-							a.year_block_list__item_link(href='#')
+							a.year_block_list__item_link(href=`/projects.html#${data.title}`)
 							.year_block_list__item_overlay
 							+picture({
 								class: 'year_block_list__item_img_w',

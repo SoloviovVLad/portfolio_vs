@@ -120,6 +120,11 @@
 	}
 }
 
+.year_block_list__item_link {
+	@include stretch;
+	z-index: 5;
+}
+
 .year_block_list__item_in {
 	position: relative;
 }
