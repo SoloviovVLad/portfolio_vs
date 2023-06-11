@@ -1,0 +1,200 @@
+extends layout/layout
+
+block vars
+	include ./templates/mixins/m-projects
+	- array = {body_class:'', title_inner:'Portfolio - Projects'}
+
+block content_block
+	include ./blocks/lines-grid
+	+projects({
+		title: '2019',
+		list: [
+			{
+				img: 'bhromaon',
+				title: 'Bhromaon',
+				descr: 'Trainer design',
+				time: '1 day',
+				link: 'https://soloviovvlad.github.io/BHROMAON/',
+				link_git: 'https://github.com/SoloviovVLad/BHROMAON'
+			},
+			{
+				img: 'cahee',
+				title: 'Cahee',
+				descr: 'Trainer design',
+				time: '1 day',
+				link: 'https://soloviovvlad.github.io/Cahee/',
+				link_git: 'https://github.com/SoloviovVLad/Cahee'
+			},
+			{
+				img: 'bootstrap',
+				title: 'Bootstrap Form',
+				descr: 'Trainer design of form',
+				time: '3 hours',
+				link: '',
+				link_git: ''
+			},
+			{
+				img: 'advocat',
+				title: 'Law office',
+				descr: 'Personal site, 3 pages',
+				time: '3 days',
+				link: 'https://advokat-ryabinin.org.ua/',
+				link_git: 'https://github.com/SoloviovVLad/Advocat'
+			},
+			{
+				img: 'webchain',
+				title: 'Webchain',
+				descr: 'Web services site',
+				time: '3 days',
+				link: 'https://soloviovvlad.github.io/WebChain/dist/',
+				link_git: 'https://github.com/SoloviovVLad/WebChain'
+			},
+		]
+	})
+	+projects({
+		title: '2020',
+		list: [
+			{
+				img: 'korotko_1',
+				title: 'Korotko writer',
+				descr: 'Personal site, 5 pages',
+				time: '7 days',
+				link: 'https://korotko-poetry.com/',
+				link_git: 'https://github.com/SoloviovVLad/KorotkoFirstSite'
+			},
+			{
+				img: 'simpleAd',
+				title: 'SimpleAD',
+				descr: 'Online service for create design, 7 pages',
+				time: '7 days',
+				link: 'https://soloviovvlad.github.io/SimpleAD/dist/',
+				link_git: 'https://github.com/SoloviovVLad/SimpleAD.git'
+			},
+			{
+				img: 'book',
+				title: 'Book better than gadget',
+				descr: 'Two pages for donats',
+				time: '1 day',
+				link: 'https://soloviovvlad.github.io/betterGadgetGrid/dist/',
+				link_git: 'https://github.com/SoloviovVLad/betterGadgetGrid',
+			},
+			{
+				img: 'donats',
+				title: 'Comments.ua',
+				descr: 'Donats page for site Comments.ua',
+				time: '5 hours',
+				link: 'https://soloviovvlad.github.io/donats/dist/',
+				link_git: 'https://github.com/SoloviovVLad/donats',
+			},
+		]
+	})
+	+projects({
+		title: '2021',
+		list: [
+			{
+				img: 'buissnes',
+				title: 'Comments.ua',
+				descr: 'This project tells about Ukrainian business',
+				time: '1 day',
+				link: 'https://soloviovvlad.github.io/UkraineBuissnes/dist/',
+				link_git: 'https://github.com/SoloviovVLad/UkraineBuissnes',
+			},
+			{
+				img: 'ketchyp',
+				title: 'HEINZ',
+				descr: 'Online store',
+				time: '1 day',
+				link: 'https://soloviovvlad.github.io/ketchyp/dist/',
+				link_git: 'https://github.com/SoloviovVLad/ketchyp',
+			},
+			{
+				img: 'ecogildia',
+				title: 'EcoGildia',
+				descr: 'Site for searching eco companies',
+				time: '1 day',
+				link: 'https://soloviovvlad.github.io/EcoGildia/dist/',
+				link_git: 'https://github.com/SoloviovVLad/EcoGildia',
+			},
+			{
+				img: 'ecoproject',
+				title: 'Ukraine Ecoproject',
+				descr: 'Site of environmental protection',
+				time: '3 days',
+				link: 'https://soloviovvlad.github.io/EcoProject/dist/',
+				link_git: 'https://github.com/SoloviovVLad/EcoProject',
+			},
+			{
+				img: 'kombucha',
+				title: 'Jiva Kombucha',
+				descr: 'Online store, 7 pages',
+				time: '7 days',
+				link: 'https://jivakombucha.com.ua/',
+				link_git: 'https://github.com/SoloviovVLad/Kombucha.git',
+			},
+		]
+	})
+	+projects({
+		title: '2022',
+		list: [
+			{
+				img: 'gotour',
+				title: 'Go Tour',
+				descr: 'Travel news site',
+				time: '4 days',
+				link: 'https://soloviovvlad.github.io/GoTour/dist/',
+				link_git: 'https://github.com/SoloviovVLad/GoTour'
+			},
+			{
+				img: 'ideal_factory',
+				title: 'Ideal Factory',
+				descr: 'Shopify project, landing with 6 unique sections',
+				time: '3 days',
+				link_git: 'https://github.com/SoloviovVLad/shopify-ideal-factory'
+			},
+			{
+				img: 'korotko_2',
+				title: 'Korotko writer',
+				descr: 'Personal site, landing, animation',
+				time: '3 days',
+				link: 'https://de.korotko-poetry.com/',
+				link_git: 'https://github.com/SoloviovVLad/KorotkoSecondSite'
+			},
+			{
+				img: 'masavi',
+				title: 'Masavi',
+				descr: 'Information site',
+				time: '5 days',
+				link: 'https://soloviovvlad.github.io/Masavi/dist/',
+				link_git: 'https://github.com/SoloviovVLad/Masavi'
+			},
+		]
+	})
+	+projects({
+		title: '2023',
+		list: [
+			{
+				img: 'jiva_new',
+				title: 'Jiva Kombucha',
+				descr: 'Add 3 new pages, redesign',
+				time: '3 days',
+				link: 'https://soloviovvlad.github.io/jiva_kombucha_new/build/',
+				link_git: 'https://github.com/SoloviovVLad/jiva_kombucha_new'
+			},
+			{
+				img: 'rssuccessagro',
+				title: 'RS Success Agro',
+				descr: 'Biotechnological industrial agro-complex, 10 pages',
+				time: '12 days',
+				link: 'https://rssuccessagro.com/',
+				link_git: 'https://github.com/SoloviovVLad/rs_success_agro'
+			},
+			{
+				img: 'today',
+				title: 'Today.ua',
+				descr: 'News site, 5 pages',
+				time: '3 days',
+				link: 'https://soloviovvlad.github.io/today_ua/build/',
+				link_git: 'https://github.com/SoloviovVLad/today_ua'
+			},
+		]
+	})

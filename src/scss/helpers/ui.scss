@@ -52,13 +52,15 @@
   width: 3rem;
   height: 3rem;
 
-	color: $lines;
+	color: $gray_4;
 
   border-radius: 50%;
 	border: 1px solid currentColor;
 
 	transform: translate(-50%, -50%);
 	pointer-events: none;
+
+	filter: drop-shadow(0 0 15px rgba($white, .65));
 
 	&::before {
 		content: '';
@@ -84,4 +86,24 @@
 .element_anim--hidden {
 	transform: translateY(100%);
 	opacity: 0;
+}
+
+.main_title {
+	font-family: $Russo;
+	-webkit-text-stroke: 2px $white;
+	letter-spacing: .05em;
+
+	color: transparent;
+
+	@include bp($point_0, min) {
+		font-size: 10rem;
+	}
+
+	@include bp($point_0 - 1, $point_2) {
+		font-size: 6rem;
+	}
+
+	@include bp($point_3) {
+		font-size: 4rem;
+	}
 }

@@ -19,11 +19,13 @@
 }
 
 .skills__title {
-	font-family: $Russo;
-	-webkit-text-stroke: 2px $white;
-	letter-spacing: .05em;
+	transition-delay: 1s;
+	transition: opacity 2s ease-in-out;
 
-	color: transparent;
+	.skills--hidden_mod & {
+		opacity: 0;
+		transform: translateY(100%);
+	}
 
 	&:not(:last-child) {
 		@include bp($point_0, min) {
@@ -37,26 +39,6 @@
 		@include bp($point_3) {
 			margin-bottom: 2rem;
 		}
-	}
-
-	transition-delay: 1s;
-	transition: opacity 2s ease-in-out;
-
-	.skills--hidden_mod & {
-		opacity: 0;
-		transform: translateY(100%);
-	}
-
-	@include bp($point_0, min) {
-		font-size: 10rem;
-	}
-
-	@include bp($point_0 - 1, $point_2) {
-		font-size: 6rem;
-	}
-
-	@include bp($point_3) {
-		font-size: 4rem;
 	}
 }
 

@@ -1,0 +1,28 @@
+mixin projects(data)
+	section.section.projects
+		.section_in
+			.projects__title.main_title!= data.title
+			.projects__wrap
+				ul.projects_list
+					each item in data.list
+						li.projects_list__item
+							.projects_list__item_in
+								.projects_list__img_scroll
+									.projects_list__img_w
+										img.projects_list__img.lazy(src=`images/projects/${data.title}/project_${item.img}.jpg`, alt="project")
+								.projects_list__content
+									h3.projects_list__title!= item.title
+									.projects_list__descr!= item.descr
+									.projects_list__time
+										.projects_list__time_icon
+											+icon('clock', 'icon--size_mod')
+										span!= item.time
+									.projects_list__links
+										if item.link
+											a.projects_list__link(href!= item.link)
+												.projects_list__link_icon
+													+icon('link', 'icon--size_mod')
+										if item.link_git
+											a.projects_list__link(href!= item.link)
+												.projects_list__link_icon
+													+icon('git', 'icon--size_mod')
