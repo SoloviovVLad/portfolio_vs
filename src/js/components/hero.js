@@ -8,6 +8,7 @@ const hero = () => {
 		heroArrow: '.js-hero-arrow',
 		sectionAnchor: '.js-year-block-anchor',
 		aside: '.js-aside',
+		social: '.js-social',
 	};
 
 	const mods = {
@@ -18,11 +19,13 @@ const hero = () => {
 		asideHidden: 'aside--hidden_mod',
 	};
 
-	const hero = document.querySelector(selectors.hero);
+	const heroBlock = document.querySelector(selectors.hero);
 	const heroList = document.querySelector(selectors.heroList);
 	const heroItem = document.querySelectorAll(selectors.heroItem);
 	const heroArrow = document.querySelector(selectors.heroArrow);
 	const asideBlock = document.querySelector(selectors.aside);
+	const socialBlock = document.querySelector(selectors.social);
+
 	if (heroList && heroItem) {
 		let maxW = 0;
 		let maxH = 0;
@@ -50,7 +53,7 @@ const hero = () => {
 	}
 
 	if (heroItem) {
-		if (hero) {
+		if (heroBlock) {
 			document.body.classList.add(mods.bodyScroll);
 		} else {
 			document.body.classList.add(mods.bodyScroll);
@@ -96,7 +99,7 @@ const hero = () => {
 			};
 
 			const handleWheel = (event) => {
-				if (!isAnimating) {
+				if (!isAnimating && heroBlock) {
 					isAnimating = true;
 					let nextItemIndex = currentItemIndex;
 
@@ -110,6 +113,7 @@ const hero = () => {
 						if (heroArrow.classList.contains(mods.heroArrow)) {
 							heroArrow.classList.remove(mods.heroArrow);
 							asideBlock.classList.remove(mods.asideHidden);
+							socialBlock.classList.remove('social--hidden_mod');
 							document.body.classList.remove(mods.bodyScroll);
 						}
 					}
@@ -164,7 +168,7 @@ const hero = () => {
 				heroArrow.addEventListener('click', scrollToSection);
 			}
 
-			if (hero) {
+			if (heroBlock) {
 				initialize();
 			}
 		}, duration);
